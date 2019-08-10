@@ -1,0 +1,24 @@
+<div class="content">
+  <div class="start">
+      <img class="img" [src]="udeaImg" alt="img">
+  </div>
+  <div class="search">
+    <input type="text" class="input" [(ngModel)]="word">
+    <div (click)="search()" class="button">Buscar</div>
+  </div>
+  <div>
+    <div class="items">
+      <div *ngFor="let item of items" class="item">
+        <img class="img" [src]="item.thumbnail" alt="img">
+        <div class="info">
+          <h2 class="text title">{{item.title}}</h2>
+          <h3 class="text">Id: {{item.id}}</h3>
+          <h3 class="text">Vendedor: {{item.seller.id}}</h3>
+          <h3 class="text">Condición: {{item.condition}}</h3>
+          <h3 class="text">Precio: {{item.price}}</h3>
+          <h3 class="text">Vendidos: {{item.sold_quantity}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
